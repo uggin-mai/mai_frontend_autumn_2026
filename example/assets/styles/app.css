@@ -22,7 +22,7 @@ body {
   line-height: 1.4;
 }
 
-img { display: block; max-width: 100%; background: #c9c9c9; } /* заглушки для картинок */
+img { display: block; max-width: 100%; background: #c9c9c9; } /* grey while placeholders are missing */
 ul { list-style: none; margin: 0; padding: 0; }
 a { color: inherit; text-decoration: none; }
 h2, h3, p { margin: 0; }
@@ -39,24 +39,7 @@ h2, h3, p { margin: 0; }
 .nav__list { display: flex; gap: 20px; font-weight: 700; font-size: 12px; white-space: nowrap; }
 .nav__list li + li::before { content: "\2666"; font-size: 7px; margin-right: 20px; vertical-align: middle; }
 
-
-/* ---------- Бургер в шапке для мобилок ---------- */
-@media (max-width: 1000px) {
-  .header__inner { height: 64px; }
-  .burger { display: grid; }
-
-  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-dark); border-top: 1px solid #333; }
-  .nav-toggle:checked ~ .nav { display: block; }
-
-  .nav__list { flex-direction: column; gap: 0; padding: 8px 16px 16px; font-size: 16px; }
-  .nav__list li + li::before { content: none; }
-  .nav__list a { display: block; padding: 14px 0; border-bottom: 1px solid #2c2c2c; }
-}
-
-@media (max-width: 400px) {
-  .logo { flex-shrink: 1; white-space: normal; }
-}
-
+/* ---------- Бургер ---------- */
 .nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
 .burger { display: none; width: 44px; height: 44px; margin-right: -10px; cursor: pointer; place-items: center; }
 .burger span { width: 24px; height: 2px; background: #fff; box-shadow: 0 -7px #fff, 0 7px #fff; }
@@ -84,7 +67,7 @@ h2, h3, p { margin: 0; }
 .all-events { display: flex; align-items: center; gap: 20px; font-family: var(--font-serif); font-size: 18px; font-weight: 700; }
 .all-events img { width: 28px; height: 28px; background: none; }
 
-/* ---------- Афиша ---------- */
+/* ---------- Ивенты ---------- */
 .event { display: flex; align-items: center; gap: 24px; padding: 24px 46px 24px 0; margin-bottom: 62px; background: var(--color-card); border-radius: 10px; }
 .event__date { width: 150px; flex-shrink: 0; text-align: center; font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--color-muted); }
 .event__date b { display: block; font-size: 44px; line-height: 1; }
@@ -98,7 +81,7 @@ h2, h3, p { margin: 0; }
 
 .button { padding: 12px 24px; background: var(--color-accent); color: #fff; border-radius: 20px; font-weight: 700; font-size: 12px; white-space: nowrap; }
 
-/* ---------- Новости ---------- */
+/* ---------- Новости + экскурсии + каледарь ---------- */
 .news-row { display: flex; gap: 100px; align-items: flex-start; }
 .news { flex: 1; }
 .news .section__title { margin-bottom: 56px; }
@@ -108,7 +91,6 @@ h2, h3, p { margin: 0; }
 .news-card h3 { margin-top: 24px; font-family: var(--font-serif); font-size: 19px; font-weight: 700; }
 .news-card p { margin-top: 18px; font-size: 12px; color: var(--color-muted); }
 
-/* ---------- Экскурсии + календарь ---------- */
 .excursions { width: 412px; flex-shrink: 0; background: var(--color-card); border-radius: 10px; overflow: hidden; }
 .excursions__cover { position: relative; }
 .excursions__cover img { width: 100%; height: 234px; object-fit: cover; border-radius: 0; }
@@ -142,4 +124,21 @@ h2, h3, p { margin: 0; }
   .news-row { gap: 48px; }
   .section { margin-top: 72px; }
   .section__head { margin-bottom: 32px; }
+}
+
+/* ---------- Бургер ---------- */
+@media (max-width: 1000px) {
+  .header__inner { height: 64px; }
+  .burger { display: grid; }
+
+  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-dark); border-top: 1px solid #333; }
+  .nav-toggle:checked ~ .nav { display: block; }
+
+  .nav__list { flex-direction: column; gap: 0; padding: 8px 16px 16px; font-size: 16px; }
+  .nav__list li + li::before { content: none; }
+  .nav__list a { display: block; padding: 14px 0; border-bottom: 1px solid #2c2c2c; }
+}
+
+@media (max-width: 400px) {
+  .logo { flex-shrink: 1; white-space: normal; }
 }
